@@ -1,0 +1,32 @@
+$bike-choice-height: 300px;
+$bike-choice-width: 75%;
+
+$background-gradient: rgb(255, 8, 0);
+$background-gradient2: rgb(0, 38, 255);
+.bike-choice-container {
+    display: flex;
+    position: sticky;
+    position: -webkit-sticky;
+   
+
+    &_theme-comparison {
+        top: 5vh;
+        height: 1px;
+        max-height: $bike-choice-height;
+        min-height: $bike-choice-height;
+        width: 100%;
+        background: white;
+        margin: auto;
+        border: 1px solid black;
+        align-items: center;
+        z-index: 1;
+    }
+}
+
+.svg {
+    position: relative;
+    min-height: 65%;
+    width: 100%;
+}
+
+

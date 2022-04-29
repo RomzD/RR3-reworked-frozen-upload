@@ -1,0 +1,22 @@
+.page-container {
+    position: relative;
+    box-sizing: border-box;
+    padding-top: 7vh;
+    min-height: 1080px;
+
+    &_theme-noisy {
+        background: 100% repeat url("./img//wall.jpg/");
+    }
+    &_theme-lights {
+        background: center/cover no-repeat url("./img//wall_lights.jpg/");
+    }
+
+    &_max-height-fullHD {
+        max-height: 1080px;
+        overflow: hidden;
+    }
+
+    &_paddingtop5vh{
+        padding-top: 5vh;
+    }
+}

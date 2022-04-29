@@ -1,0 +1,39 @@
+@import '../../../variables.scss';
+
+$comparison-side-size: 50px;
+
+.comparison-list-button {
+    position: absolute;
+    top: calc( 50% - ($comparison-side-size/2));
+
+    z-index: 1;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+
+    transition: 0.5s;
+    filter: blur(3px);
+    &_theme-left {
+        background: linear-gradient(to left, rgb(0, 0, 0) 25%, $header-background-color);
+        clip-path: polygon(100% 0, 0 50%, 100% 100%);
+        left: calc(-1 * $comparison-side-size);
+        &:disabled {
+            filter: grayscale(1);
+            opacity: 0;
+        }
+    }
+
+    &_theme-right {
+        background: linear-gradient(to right, rgb(0, 0, 0) 25%, $header-background-color);
+        clip-path: polygon(0 0, 100% 50%, 0 100%);
+        right: calc(-1 * $comparison-side-size);
+        &:disabled {
+            filter: grayscale(1);
+            opacity: 0;
+        }
+    }
+    &:disabled {
+        filter: grayscale(1);
+        opacity: 0;
+    }
+}

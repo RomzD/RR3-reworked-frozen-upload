@@ -1,0 +1,24 @@
+@import '../common-page-styles.scss';
+
+.bike-view-container {
+    position: relative;
+    display: flex;
+    height: auto;
+}
+
+.bike-stat-container {
+    flex: 3;
+    padding-top: 3vh;
+
+}
+
+.bike-image-container {
+    flex: 1;
+    perspective: 500px;
+}
+
+@media screen and (max-width: 1279px) {
+   .bike-view-container {
+       flex-flow: column-reverse;
+   }
+}

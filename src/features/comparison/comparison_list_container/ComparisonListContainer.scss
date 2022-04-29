@@ -1,0 +1,28 @@
+@import "../../../variables.scss";
+@import "../../../mixins.scss";
+
+.comparison-list-container {
+    transition: 0.5s;
+    &_theme-outer {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 45%;
+        min-width: 45%;
+        max-width: 45%;
+        height: 100%;
+        overflow: hidden;
+    }
+
+    &_theme-inner {
+        position: relative;
+        @include flex-center-center;
+        width: 13vw;
+        height: 13vw;
+        min-width: $comparison-bike-card-min-height;
+        max-width: $comparison-bike-card-max-height;
+        min-height: $comparison-bike-card-min-height;
+        max-height: $comparison-bike-card-max-height;
+        perspective: 300px;
+    }
+}

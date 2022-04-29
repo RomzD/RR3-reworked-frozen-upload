@@ -1,0 +1,86 @@
+@use "sass:list";
+@import "../../../variables.scss";
+
+.bike-card {
+    &:hover {
+        transform: rotate(0deg);
+        z-index: 1;
+        box-shadow: 0 0 7px rgb(192, 251, 255);
+        filter: grayscale(0);
+    }
+
+    &_theme-vinyl-row {
+        position: absolute;
+        height: $bike-card-size;
+        width: $bike-card-size;
+        max-height: $bike-card-max-size;
+        min-height: $bike-card-min-size;
+        max-width: $bike-card-max-size;
+        min-width: $bike-card-min-size;
+
+        transform: rotateY(45deg) rotateZ(-4deg);
+        box-shadow: 0 0 3px $card-shadow-color;
+        border: 3px solid $card-border-color;
+        background-size: cover;
+        background-position: center;
+        cursor: pointer;
+        transition: 1s;
+        filter: grayscale(0.5);
+        top: 0;
+        $card-offset: 3vw;
+        @each $bike in $bike-names {
+            $index: list.index($bike-names, $bike);
+            &:nth-child(#{$index}) {
+                background-image: url("../../../img/#{$bike}.png");
+                left: $card-offset * $index;
+            }
+        }
+    }
+    &_theme-chosen {
+        top: -10%;
+    }
+    &_theme-comparison-row {
+        transition: 0.5s;
+        background: center/cover no-repeat;
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.rolling-star {
+    position: absolute;
+    top: 120%;
+    left: 45%;
+    width: 25px;
+    height: 25px;
+    background: red;
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    animation: rolling-star linear 7s infinite ;
+}
+
+@keyframes rolling-star {
+    0% {
+        transform: translateX(0px) translateZ(0) rotateY(0deg);
+    }
+   
+    20% {
+        transform: translateX(25px) translateZ(-30px) rotateY(90deg);
+    }
+    40% {
+        transform: translateX(50px) translateZ(-60px) rotateY(180deg);
+    }
+    60% {
+        transform: translateX(50px) translateZ(-60px) rotateY(240deg);
+    }
+    80% {
+        transform: translateX(25px) translateZ(-30px) rotateY(300deg);
+    }
+
+    100% {
+        transform: translateX(0px) translateZ(0) rotateY(360deg)
+    }
+}

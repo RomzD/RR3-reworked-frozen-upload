@@ -1,0 +1,46 @@
+$card-shadow-color: red;
+$card-border-color: white;
+
+$bike-card-size: 10vw;
+$bike-card-max-size: 150px;
+$bike-card-min-size: 150px;
+
+$bike-image-border-color: pink;
+
+$rat-categ-color: rgb(253, 66, 84);
+$sport-categ-color: rgb(93, 255, 93);
+$super-categ-color: rgb(255, 44, 192);
+$wild-categ-color: rgb(32, 32, 255);
+
+$header-background-color: rgb(98, 98, 230);
+$menu-text-shadow: rgb(255, 197, 255);
+$hover-inner-item-shadow: white;
+$menu-text-color: white;
+
+$header-height: 5vh;
+$header-max-height: 200px;
+
+$bike-stat-name-color: #e0e0e0cf;
+$bike-stat-name-bg-color: rgb(161, 191, 255);
+
+$comparison-bike-card-min-height: 150px;
+$comparison-bike-card-max-height: 250px;
+
+$bike-names: (
+    "Perro 125",
+    "Corsair 400",
+    "Kamakazi 250",
+    "Banzai 450",
+    "Ratzo 500",
+    "Stiletto 600",
+    "Perro 250",
+    "Kamakazi 750",
+    "Diablo 750",
+    "DMG 1000",
+    "Corsair 600 N",
+    "Kamakazi 750 N",
+    "Banzai 750 1100",
+    "Stiletto 900 N",
+    "Diablo 1000 N",
+    "Wild Thing 2000"
+);

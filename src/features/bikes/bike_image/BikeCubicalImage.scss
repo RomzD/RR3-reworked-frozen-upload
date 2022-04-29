@@ -1,0 +1,139 @@
+
+   
+    $topBot: rgba(0, 0, 255, 0.432);
+    $side: rgba(0, 0, 255, 0.432);
+    .side {
+        $bike-img-size: 25vw;
+        position: absolute;
+        top: 0;
+        left: 0;
+        border: 1px solid black;
+        width: $bike-img-size;
+        height: $bike-img-size;
+        transform-style: preserve-3d;
+
+        &__right {
+        
+            transform: translateX(calc(1 * ($bike-img-size/2))) translateZ(calc(-1 * ($bike-img-size / 2))) rotateY(90deg);
+            background: $side
+        }
+    
+        &__left {
+            transform: translateX(calc(-1 * ($bike-img-size/2))) translateZ(calc(-1 * ($bike-img-size / 2))) rotateY(-90deg);
+            background: $side;
+        }
+    
+        &__bottom {
+            transform: translateY(calc(1 * ($bike-img-size/2))) translateZ(calc(-1 * ($bike-img-size / 2))) rotateX(-90deg);
+            background: $topBot;
+        }
+    
+        &__top {
+            transform: translateY(calc(-1 * ($bike-img-size/2))) translateZ(calc(-1 * ($bike-img-size / 2))) rotateX(90deg);
+            background: $topBot;
+        }
+        &__back {
+            transform: translateZ(calc(-1 * ($bike-img-size))) rotateY(-180deg);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            font-size: 36px;
+        }
+    }
+
+
+
+@media screen and (min-width: 1280px) {
+    .side {
+        $bike-img-size: 25vw;
+        width: $bike-img-size;
+        height: $bike-img-size;
+        &__right {
+        
+            transform: translateX(calc(1 * ($bike-img-size/2))) translateZ(calc(-1 * ($bike-img-size / 2))) rotateY(90deg);
+            background: $side
+        }
+    
+        &__left {
+            transform: translateX(calc(-1 * ($bike-img-size/2))) translateZ(calc(-1 * ($bike-img-size / 2))) rotateY(-90deg);
+            background: $side;
+        }
+    
+        &__bottom {
+            transform: translateY(calc(1 * ($bike-img-size/2))) translateZ(calc(-1 * ($bike-img-size / 2))) rotateX(-90deg);
+            background: $topBot;
+        }
+    
+        &__top {
+            transform: translateY(calc(-1 * ($bike-img-size/2))) translateZ(calc(-1 * ($bike-img-size / 2))) rotateX(90deg);
+            background: $topBot;
+        }
+        &__back {
+            transform: translateZ(calc(-1 * ($bike-img-size))) rotateY(-180deg);
+        }
+    }
+
+}
+
+@media screen and (max-width: 1279px) {
+    .side {
+        $bike-img-size: 300px;
+        width: $bike-img-size;
+        height: $bike-img-size;
+        &__right {
+        
+            transform: translateX(calc(1 * ($bike-img-size/2))) translateZ(calc(-1 * ($bike-img-size / 2))) rotateY(90deg);
+            background: $side
+        }
+    
+        &__left {
+            transform: translateX(calc(-1 * ($bike-img-size/2))) translateZ(calc(-1 * ($bike-img-size / 2))) rotateY(-90deg);
+            background: $side;
+        }
+    
+        &__bottom {
+            transform: translateY(calc(1 * ($bike-img-size/2))) translateZ(calc(-1 * ($bike-img-size / 2))) rotateX(-90deg);
+            background: $topBot;
+        }
+    
+        &__top {
+            transform: translateY(calc(-1 * ($bike-img-size/2))) translateZ(calc(-1 * ($bike-img-size / 2))) rotateX(90deg);
+            background: $topBot;
+        }
+        &__back {
+            transform: translateZ(calc(-1 * ($bike-img-size))) rotateY(-180deg);
+        }
+    }
+}
+
+@media screen and (min-width: 1921px) {
+    .side {
+        $bike-img-size: 550px;
+        width: $bike-img-size;
+        height: $bike-img-size;
+        &__right {
+        
+            transform: translateX(calc(1 * ($bike-img-size/2))) translateZ(calc(-1 * ($bike-img-size / 2))) rotateY(90deg);
+            background: $side
+        }
+    
+        &__left {
+            transform: translateX(calc(-1 * ($bike-img-size/2))) translateZ(calc(-1 * ($bike-img-size / 2))) rotateY(-90deg);
+            background: $side;
+        }
+    
+        &__bottom {
+            transform: translateY(calc(1 * ($bike-img-size/2))) translateZ(calc(-1 * ($bike-img-size / 2))) rotateX(-90deg);
+            background: $topBot;
+        }
+    
+        &__top {
+            transform: translateY(calc(-1 * ($bike-img-size/2))) translateZ(calc(-1 * ($bike-img-size / 2))) rotateX(90deg);
+            background: $topBot;
+        }
+        &__back {
+            transform: translateZ(calc(-1 * ($bike-img-size))) rotateY(-180deg);
+        }
+    }
+}

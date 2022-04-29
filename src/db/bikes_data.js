@@ -1,4 +1,6 @@
-var bikes = [
+import { newBikes } from "./renewedBikeClass";
+
+export const bikes = [
     ['rat', 'Perro 125', '$2990', '35', '200', '120/121', '126/127', 'none', 'none', '$740', '$1000', '$140', '$290', 'Ultra-quick two-stroke with all the power of a leaf blower.', 0],
     ['rat', 'Corsair 400', '$3240', '45', '310', '122/123', '128/129', 'none', 'none', '$810', '$1000', '$160', '$320', 'One of the few birds that can\'t fly. Should be called PENGUIN.', 0],
     ['rat', 'Kamakazi 250', '$3490', '50', '290', '124/125', '130/131', 'none', 'none', '$870', '$1000', '$170', '$340', 'This tiny two-stroker has smoked bigger bikes in it\'s time. ', 0],
@@ -10,7 +12,7 @@ var bikes = [
     ['sport', 'Diablo 750', '$13790', '90', '440', '142/143', '150/151', 'none', 'none', '$3440', '$1000', '$680', '$1370', 'Blazing speed and sharp handling devastate the competition.', 0],
     ['sport', 'DMG 1000', '$16870', '120', '515', '152/153', '159/160', 'none', 'none', '$4210', '$1000', '$840', '$1680', 'A reliable heavyweight for the Rasher who likes to brawl.', 0],
     ['super', 'Corsair 600 N', '$18990', '100', '430', '146/147', '154/155', '165/167', '173/175', '$4740', '$1000', '$940', '$1890', 'Nitro and a fishy frame make it hard to hold a line at speed.', 4],
-    ['super', 'Kamakazi 750 N', '$21780', '120', '520', '149/150', '157/158', '168/170', '177/179', '$5440', '$1000', '$1080', '$2170', 'A quick steerer with a fram that begs the stress of nitro.', 6],
+    ['super', 'Kamakazi 750 N', '$21780', '120', '520', '149/150', '157/158', '168/170', '177/179', '$5440', '$1000', '$1080', '$2170', 'A quick steerer with a frame that begs the stress of nitro.', 6],
     ['super', 'Banzai 750 1100', '$29990', '140', '450', '163/165', '172/173', 'none', 'none', '$7490', '$1000', '$1490', '$2990', 'Middleweight on steroids, an 1100 stuffed into a 750 chasis.', 0],
     ['super', 'Stiletto 900 N', '$34880', '140', '490', '157/158', '165/166', '178/179', '186/188', '$8720', '$1000', '$1740', '$3480', 'An ultra-light 900 with nitrous muscle, it takes a steady hand.', 6],
     ['super', 'Diablo 1000 N', '$40000', '160', '490', '160/162', '169/170', '181/183', '190/192', '$10000', '$1000', '$2000', '$3990', 'The most monstrous production bike ever to rule the road.', 8],
@@ -36,6 +38,18 @@ function CreateBike(id, category, name, price, hp, lbs, initSpeed, topSpeed, nit
     this.pic = 'img/' + name + '.png';
     this.description = description;
     this.nitroCharge = nitroCharge;
+    this.nitroChargeNumber = nitroCharge;
+    this.topSpeedNumber = Number(topSpeed.substring(0, 3));
+    this.initSpeedNumber = Number(initSpeed.substring(0, 3));
+    this.topNitroSpeedNumber = topNitroSpeed === 'none' ? topNitroSpeed : Number(topNitroSpeed.substring(0, 3))
+    this.nitroSpeedNumber = nitroSpeed === 'none' ? nitroSpeed : Number(nitroSpeed.substring(0, 3));
+    this.priceNumber = Number(price.substring(1));
+    this.armorNumber = Number(armor.substring(1))
+    this.performanceNumber = Number(performance.substring(1))
+    this.tiresNumber = Number(tires.substring(1));
+    this.suspensionNumber = Number(suspension.substring(1))
 }
+export const newBikesArray = newBikes(bikes);
 
-export const bikesObjects = bikes.map((bike, index) => new CreateBike(index, ...bike))
+export const bikeEntitites = bikes.map((bike, index) => new CreateBike(index, ...bike))
+export const bikesIds = bikeEntitites.map(bike => bike.id);

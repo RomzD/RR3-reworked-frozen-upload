@@ -1,19 +1,23 @@
 import React from "react";
 import {
-    BrowserRouter as Router,
-    Route
+    BrowserRouter as Router
 } from "react-router-dom";
 
 import BikesPage from "./pages/BikesPage";
 
-export default function App() {
 
+import './common.scss'
+import NavBar from "./navigation/NavBar";
+import BikeComparisonPage from "./pages/BikeComparisonPage";
+
+export default function App() {
 
 
     return (
         <Router>
-            <Route path="/" component={BikesPage} />
-
+            <NavBar />
+            <BikesPage />
+            <BikeComparisonPage />
         </Router>
     )
 }

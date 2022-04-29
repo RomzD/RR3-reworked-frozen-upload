@@ -1,0 +1,52 @@
+@import '../../variables.scss';
+$red-side-color: red;
+$blue-side-color: blue;
+
+.versus-bike-card {
+    box-sizing: border-box;
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    top: 25%;
+    left: 0;
+    transition: 0.5s;
+    background-size: cover;
+    background-position: center;
+
+    border: 4px solid $red-side-color;
+    box-shadow: 0 0 10px $red-side-color;
+
+    &_theme-blue {
+        border-color: $blue-side-color;
+        box-shadow: 0 0 10px $blue-side-color;
+    }
+
+    &__name {
+        position: absolute;
+        top: -35%;
+        left: 0;
+        width: 100%;
+        height: 30%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 24px;
+        text-align: center;
+        font-family: "QuickSand";
+        font-weight: bold;
+        letter-spacing: 3px;
+        &_theme-wild {
+            color: $wild-categ-color;
+        }
+        &_theme-rat {
+            color: $rat-categ-color;
+        }
+        &_theme-sport {
+            color: $sport-categ-color;
+        }
+        &_theme-super {
+            color: $super-categ-color;
+        }
+    }
+}
+

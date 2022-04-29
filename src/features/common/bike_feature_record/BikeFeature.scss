@@ -1,0 +1,179 @@
+@import "../../../mixins.scss";
+$card-font-size: 24px;
+$spec-header-font-color: #0004ff;
+$bike-spec-font-color: rgb(17, 0, 255);
+
+.bike-feature-section-container {
+    position: relative;
+    box-sizing: border-box;
+    margin-left: 100px;
+    display: flex;
+    text-align: center;
+    height: 100%;
+    font-size: 16px;
+    box-shadow: inset 0 0 5px rgb(17 0 255);
+    transform: perspective(300px) rotateY(1deg);
+    background: linear-gradient(#d6efff 10%, transparent);
+}
+
+.feature-header {
+    @include flex-center-around;
+    font-family: "Neon";
+    font-size: 36px;
+    letter-spacing: 7px;
+    color: $spec-header-font-color;
+    text-shadow: 0 0 5px #8882ff;
+    height: 10%;
+    width: 100%;
+    &_theme-small {
+    }
+}
+
+.bike-feature-container {  
+    flex-flow: column wrap;
+    cursor: default;
+
+    &_theme-cubical-back {
+        position: relative;
+        width: 100%;
+        height: 100%;
+    }
+
+    &_theme-feature-table {
+        height: 90%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+    }
+    &_theme-regular {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 50%;
+        height: 50%;
+       
+    }
+
+    &_inner {
+        display: flex;
+        flex-flow: row wrap;
+        width: 50%;
+        flex: 1;
+    }
+}
+
+.bike-feature-record {
+    display: flex;
+    justify-content: center;
+    flex: 1;
+    color: white;
+    font-size: 32px;
+    text-transform: uppercase;
+    text-align: center;
+    cursor: default;
+
+    &__name {
+        @include flex-center-center;
+
+        flex: 1;
+        &_theme-feature-table {
+            font-family: "QuickSand";
+            color: $bike-spec-font-color;
+            width: 50%;
+        }
+
+        &_theme-regular {
+            background: rgba(176, 231, 231, 0.507);
+        }
+
+        &_theme-cubical-back {
+            background: black;
+        }
+    }
+
+    &__value {
+        @include flex-center-center;
+        flex: 1;
+
+        &_theme-feature-table {
+            font-family: "QuickSand";
+            color: $bike-spec-font-color;
+            width: 50%;
+        }
+
+        &_theme-regular {
+            background: rgba(21, 21, 107, 0.555);
+        }
+
+        &_theme-cubical-back {
+            background: rgb(25, 11, 104);
+            padding: 0 10px;
+        }
+    }
+    &_theme-regular {
+        height: 33%;
+    }
+
+    &_theme-cubical-back {
+        height: 50%;
+    }
+
+    &_theme-feature-table {
+        position: relative;
+        flex: 1;
+        flex-flow: row wrap;
+        justify-content: space-around;
+        align-items: center;
+        width: 100%;
+    }
+}
+
+@media screen and(min-width: 1280px) and (max-width: 1919px) {
+    .bike-feature-record {
+        font-size: 26px;
+
+        &__name {
+            &_theme-cubical-back {
+                font-size: 20px;
+            }
+        }
+
+        &__value {
+            &_theme-cubical-back {
+                font-size: 24px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1279px) {
+    .bike-feature-record {
+        font-size: 22px;
+
+        &__name {
+            &_theme-cubical-back {
+                font-size: 20px;
+            }
+        }
+
+        &__value {
+            &_theme-cubical-back {
+                font-size: 16px;
+            }
+        }
+    }
+
+    .bike-feature-section-container {
+        margin-left: 2%;
+    }
+
+    .bike-feature-container {
+
+        &_theme-feature-table {
+            min-height: 220px;
+
+        }
+    }
+}
